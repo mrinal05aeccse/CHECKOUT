@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     /* border: 1px solid black; */
-    margin: 20px 30px;
+    margin: 50px 50px;
 }
 /* .course-container{
     display: inline-flex;
@@ -13,6 +13,7 @@
     margin: 10px 10px;
     background-color: #F8F9F9;
     border: 1px solid black;
+    /* margin:10px 10px; */
 }
 .course-name{
     text-align: center;
@@ -44,5 +45,6 @@
 @media (max-width: 800px) {
     .container {
              flex-direction: column;
+             justify-content: center;
              }
         }
