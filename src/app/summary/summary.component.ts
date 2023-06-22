@@ -17,14 +17,17 @@ export class SummaryComponent {
     sum:number=0; 
   ngOnInit():void{
     this.courses=this.courseService.courses;
-    this.courses.forEach((course) => {
-      const price: number = course.price;
-      // Do something with the price, such as printing it
-      this.sum=this.sum+price;
-    });
-    this.courseService.total=this.sum;
+    // this.courses.forEach((course) => {
+    //   const price: number = course.price;
+    //   // Do something with the price, such as printing it
+    //   this.sum=this.sum+price;
+    // });
+    // this.courseService.total=this.sum;
+    this.sum=this.courseService.getTotalSum();
   }
-
+  ngDoCheck(){
+    this.sum=this.courseService.getTotalSum();
+  }
   GoToPayment(){
     this.router.navigateByUrl('Payment');
   }

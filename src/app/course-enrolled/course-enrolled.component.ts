@@ -19,7 +19,8 @@ export class CourseEnrolledComponent {
     this.courses=this.courseService.courses;
   }
   
-  OnClickRemove(){
-    
+  OnClickRemove(id:number){
+    this.course_id=id;
+    this.courseService.DeleteCourse(this.course_id);
   }
 }

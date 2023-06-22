@@ -38,6 +38,12 @@ form input[type="text"]{
     margin: 0.5rem 0;
     outline: none;
 }
+form input[type="email"]{
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    margin: 0.5rem 0;
+    outline: none;
+}
 #zip{
     display: flex;
     margin-top: 0.5rem;
@@ -51,7 +57,6 @@ input[type="submit"]{
     width: 100%;
     padding: 0.7rem 1.5rem;
     background-color:rgb(12, 25, 203);
-   
     color: white;
     border: none;
     outline: none;
@@ -69,4 +74,10 @@ input[type="submit"]:hover{
     body{
         overflow-x: hidden;
     }
+}
+input.ng-invald.ng-touched{
+    border-color: red;
+}
+small{
+    color: red;
 }

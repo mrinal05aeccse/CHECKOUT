@@ -3,46 +3,60 @@
         <div class="left">
             <h3>BILLING</h3>
             <form action="">
-                Full name
-                <input type="text" name="" placeholder="Enter name">
+                First Name
+                <input type="text" name="firstname" placeholder="Enter as per card" required>
+                Last Name
+                <input type="text" name="lastname" placeholder="Enter as per card"required>
                 Email
-                <input type="text" name="" placeholder="Enter email">
+                <input type="email" name="email" placeholder="Enter email" required email>
             </form>
             <h3>Total Amount : ${{total_sum}}</h3>
             <input type="submit" name="" value="Back To Cart" (click)="BackToMyCart()">
         </div>
         <div class="right">
             <h3>PAYMENT</h3>
-            <form action="">
+            <form (ngSubmit)="GoToPaymentProcessing()" #myForm="ngForm">
                 Accepted Card<br>
                 <img src="/assets/Payments/visa.png" width="50">
                 <img src="/assets/Payments/masterCard.png" width="50">
                 <br><br>
 
-                Credit Card Number
-                <input type="text" name="" placeholder="Enter card number">
+                Enter Card Number
+                <input type="text" name="credit_card_number" placeholder="Enter card number" ngModel required #ccnum="ngModel">
+                <div>
+                    <small *ngIf="ccnum.invalid && ccnum.touched">*card number is required</small>
+                </div>
 
                 Exp month
-                <input type="text" name="" placeholder="Enter Month">
+                <input type="text" name="exp_month" placeholder="Enter Month" ngModel required #expm="ngModel">
+                <div>
+                    <small *ngIf="expm.invalid && expm.touched">*expiry month is required</small>
+                </div>
                 <div id="zip">
                     <label>
                         Exp year
 
-                        <select>
+                        <select name="exp_year" ngModel required #expy="ngModel">
                             <option>Choose Year..</option>
                             <option>2023</option>
                             <option>2024</option>
                             <option>2025</option>
                             <option>2026</option>
                         </select>
+                        <div>
+                            <small *ngIf="expy.invalid && expy.touched">*expiry year is required</small>
+                        </div>
                     </label>
                     <label>
                         CVV 
-                        <input type="text" name="" placeholder="Enter CVV">
+                        <input type="text" name="cvv" placeholder="Enter CVV" ngModel required #cvvv="ngModel">
+                        <div>
+                            <small *ngIf="cvvv.invalid && cvvv.touched">*expiry year is required</small>
+                        </div>
                     </label>
                 </div>
             </form>
-            <input type="submit" name="" value="PAY" (click)="GoToPaymentProcessing()">
+            <input type="submit" name="" value="PAY" (click)="GoToPaymentProcessing()" [disabled]="!myForm.valid">
         </div>
     </div>
 </header>

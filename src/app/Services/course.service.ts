@@ -16,6 +16,13 @@ export class CourseService{
         total:number=0;
 
         DeleteCourse(id:number){
-            this.courses.splice(id,1);
+          const index = this.courses.findIndex(course => course.id === id);
+          if (index !== -1) {
+            this.courses.splice(index, 1);
+          }
+        }
+
+        getTotalSum(): number {
+          return this.courses.reduce((sum, course) => sum + course.price, 0);
         }
 }
