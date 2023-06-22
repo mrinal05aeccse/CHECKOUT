@@ -1,7 +1,7 @@
 .container{
     display: flex;
     justify-content: space-around;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 20px 30px;
 }
 /* .course-container{
@@ -25,6 +25,7 @@
 
 .details{
     display: flex;
+    justify-content:center;
     margin: 10px 0px;
 }
 .course-type{
@@ -40,3 +41,8 @@
    
 }
 
+@media (max-width: 800px) {
+    .container {
+             flex-direction: column;
+             }
+        }

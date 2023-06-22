@@ -8,7 +8,8 @@
                 Email
                 <input type="text" name="" placeholder="Enter email">
             </form>
-            <input type="submit" name="" value="Back To Cart">
+            <h3>Total Amount : ${{total_sum}}</h3>
+            <input type="submit" name="" value="Back To Cart" (click)="BackToMyCart()">
         </div>
         <div class="right">
             <h3>PAYMENT</h3>
@@ -41,7 +42,7 @@
                     </label>
                 </div>
             </form>
-            <input type="submit" name="" value="Proceed to Checkout">
+            <input type="submit" name="" value="PAY">
         </div>
     </div>
 </header>
