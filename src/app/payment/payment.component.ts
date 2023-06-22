@@ -18,4 +18,7 @@ export class PaymentComponent {
   BackToMyCart(){
     this.router.navigateByUrl('');
   }
+  GoToPaymentProcessing(){
+    this.router.navigateByUrl('PaymentProcessing');
+  }
 }
