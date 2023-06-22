@@ -22,6 +22,7 @@ export class SummaryComponent {
       // Do something with the price, such as printing it
       this.sum=this.sum+price;
     });
+    this.courseService.total=this.sum;
   }
 
   GoToPayment(){

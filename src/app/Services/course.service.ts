@@ -12,4 +12,10 @@ export class CourseService{
           price: 0.00, ratings: 4.0, image:'assets/courses/course-image-3.jpeg',
           description: 'In this course you will learn the fundamentals of React. This course is purely designed for beginners and teaches you all the basic concepts of React step by step'
         }];
+
+        total:number=0;
+
+        DeleteCourse(id:number){
+            this.courses.splice(id,1);
+        }
 }

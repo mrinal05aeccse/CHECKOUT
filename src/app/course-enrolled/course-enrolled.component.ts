@@ -13,7 +13,13 @@ export class CourseEnrolledComponent {
     price: number, ratings: number, image: string,
     description: string}[]=[];
 
+    course_id:number;
+    
   ngOnInit():void{
     this.courses=this.courseService.courses;
-  }  
+  }
+  
+  OnClickRemove(){
+    
+  }
 }
