@@ -1,0 +1,16 @@
+.Fontstyles{
+    text-align: center;
+    font-family: "Trirong", serif;
+ }
+ .box{
+    background-color:rgb(229, 234, 242);
+    margin: 20px auto;
+    width: 80vw;
+    display: flex;
+}
+
+@media (max-width: 800px) {
+    .box {
+             flex-direction: column;
+             }
+        }
