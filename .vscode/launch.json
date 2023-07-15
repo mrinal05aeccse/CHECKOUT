@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "SpringappApplication",
+      "request": "launch",
+      "mainClass": "com.example.springapp.SpringappApplication",
+      "projectName": "springapp"
+    },
+    {
       "name": "ng serve",
       "type": "pwa-chrome",
       "request": "launch",

@@ -1,34 +1,38 @@
-import { Component } from '@angular/core';
-import { CourseService } from '../Services/course.service';
-import { Router } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CourseListService } from '../Services/courseList.service';
+import { Course } from '../course';
 
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.css']
+  styleUrls: ['./summary.component.css'],
+  providers: [CourseListService]
 })
 export class SummaryComponent {
-  constructor(private courseService:CourseService, private router: Router){}
 
-  courses:{ id:number, name:string, author: string, duration: number, type: string, 
-    price: number, ratings: number, image: string,
-    description: string}[]=[];
+  id:number; 
+  price:number;
 
-    sum:number=0; 
+  constructor(private courseListService:CourseListService, private router: Router,private route:ActivatedRoute){ }
+
+  course: Course | undefined;
+
+  
   ngOnInit():void{
-    this.courses=this.courseService.courses;
-    // this.courses.forEach((course) => {
-    //   const price: number = course.price;
-    //   // Do something with the price, such as printing it
-    //   this.sum=this.sum+price;
-    // });
-    // this.courseService.total=this.sum;
-    this.sum=this.courseService.getTotalSum();
+    this.id=this.route.snapshot.params['id'];
+    const courses = this.courseListService.getCourses();
+    this.course = courses.find(course => course.id == this.id);
+    this.price=this.courseListService.getCoursePriceById(this.id);
+   
   }
-  ngDoCheck(){
-    this.sum=this.courseService.getTotalSum();
+  // ngDoCheck(){
+  //   this.sum=this.courseService.getTotalSum();
+  // }
+  GoToPayment(id:number){
+    this.router.navigate(['Payment',id]);
   }
-  GoToPayment(){
-    this.router.navigateByUrl('Payment');
+  BackToMyCart(){
+    this.router.navigateByUrl('');
   }
 }

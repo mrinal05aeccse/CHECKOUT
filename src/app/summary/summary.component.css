@@ -1,7 +1,21 @@
-.container2{
+.Fontstyles{
+    text-align: center;
+    font-family: "Trirong", serif;
+ }
+ .box{
+    background-color:rgb(229, 234, 242);
+    margin: 20px auto;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.box .container2{
     width: 200px;
-     border: 1px solid black;
-     margin: 100px auto;
+     /* border: 1px solid black; */
+     margin: 50px 10px;
      padding: 10px;
      text-align: center;
  }
@@ -21,3 +35,51 @@
 .button:hover{
     background-color: green;
 }
+
+.buttonBack{
+    background-color: #2817df; /* Green */
+     border: none;
+     color: white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     border-radius: 10px;
+}
+.box .course-card{
+    width:200px;
+    height: 300px;
+    margin: 50px 10px;
+    background-color: #F8F9F9;
+    /* border: 1px solid black; */
+    /* margin:10px 10px; */
+}
+.course-name{
+    text-align: center;
+}
+.course-description{
+    margin: 10px 0px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.details{
+    display: flex;
+    justify-content:center;
+    margin: 10px 0px;
+}
+
+
+
+@media (max-width: 800px) {
+    .box {
+                width: 220px;
+                margin: 50px auto;
+             flex-direction: column;
+             justify-content: space-around;
+             }
+        }
+        
+        

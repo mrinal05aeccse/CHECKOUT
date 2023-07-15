@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
     /* border: 1px solid black; */
     margin: 50px 50px;
 }
@@ -34,6 +34,7 @@
     font-weight: bold;
 }
 .course-button{
+    
    padding: 5px 5px;
    border: none;
    background-color: rgb(206, 54, 8);
@@ -42,9 +43,19 @@
    
 }
 
+.buy-button{
+    background-color: rgb(17, 212, 60);
+    padding: 5px 5px;
+   border: none;
+   color: white;
+   border-radius: 5px;
+}
+
 @media (max-width: 800px) {
     .container {
+                width: 220px;
+                margin: 50px auto;
              flex-direction: column;
-             justify-content: center;
+             justify-content: space-around;
              }
         }

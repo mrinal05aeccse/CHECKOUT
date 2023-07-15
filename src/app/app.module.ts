@@ -11,12 +11,14 @@ import { PaymentComponent } from './payment/payment.component';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { PaymentProcessingComponent } from './payment-processing/payment-processing.component';
 import { PaymentSuccessfulComponent } from './payment-successful/payment-successful.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes:Routes=[
   {path:'',component:MyCartComponent},
-  {path:'Payment',component: PaymentComponent},
+  {path:'Payment/:id',component: PaymentComponent},
   {path:'PaymentProcessing',component: PaymentProcessingComponent},
-  {path:'PaymentSuccessfull', component: PaymentSuccessfulComponent}
+  {path:'PaymentSuccessfull', component: PaymentSuccessfulComponent},
+  {path:'SummaryPage/:id', component: SummaryComponent}
 ]
 
 @NgModule({
@@ -33,6 +35,7 @@ const appRoutes:Routes=[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

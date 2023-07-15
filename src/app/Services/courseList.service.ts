@@ -1,4 +1,4 @@
-export class CourseService{
+export class CourseListService{
     courses = [
         { id:101, name:'JavaScript for beginners', author: 'John Heikela', duration: 48, type: 'Free', 
           price: 0.00, ratings: 3.5, image:'assets/courses/course-image-1.jpeg',
@@ -12,19 +12,20 @@ export class CourseService{
           price: 0.00, ratings: 4.0, image:'assets/courses/course-image-3.jpeg',
           description: 'In this course you will learn the fundamentals of React. This course is purely designed for beginners and teaches you all the basic concepts of React step by step'
         }];
-
-        total:number=0;
-
-        DeleteCourse(id:number){
-          const index = this.courses.findIndex(course => course.id === id);
-          if (index !== -1) {
-            this.courses.splice(index, 1);
+    
+        getCoursePriceById(id:number):number{
+            console.log(id); 
+            let course = this.courses.find(c => c.id == id);
+            console.log(course);
+            if (course) {
+              return course.price;
+            } else {
+              return 0; // Return a default value when the course is not found
+            }
+  
           }
-        }
 
-        getTotalSum(): number {
-          return this.courses.reduce((sum, course) => sum + course.price, 0);
-        }
-
-        
+          getCourses() {
+            return this.courses;
+          }
 }

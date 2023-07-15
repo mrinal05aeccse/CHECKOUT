@@ -10,8 +10,10 @@
                   <div class="course-price" ><b>Price:</b> ${{course.price}}</div>
               </div>
               <div style="text-align: center;">
-                <button class="course-button" (click)="OnClickRemove(course.id)">Remove</button>
+                <button class="buy-button" (click)="OnClickGoToSummaryPage(course.id)">BUY</button>
+                <button class="course-button" (click)="OnClickRemove(course.id)">REMOVE</button>
             </div>
+            
         </div>
       
  </div>
